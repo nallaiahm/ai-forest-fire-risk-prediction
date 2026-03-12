@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wild Guard AI - Forest Fire Risk Prediction & Response</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>Wild Guard AI - Forest Fire Risk Prediction & Response</header>
+
+<div class="container">
+
+<div class="section">
+<h2>Live Environmental Dashboard</h2>
+<p>Temperature: <span id="tempVal"></span> °C</p>
+<p>Humidity: <span id="humVal"></span> %</p>
+<p>Wind Speed: <span id="windVal"></span> km/h</p>
+<p>Soil Dryness: <span id="soilVal"></span> %</p>
+<p>🔥 Fire Risk Level: <span id="riskLevel"></span></p>
+<div class="progress-bar">
+<div id="riskBar" class="progress-fill">0%</div>
+</div>
+</div>
+
+<div class="section">
+<h2>Image Fire Detection (Color-Based AI Simulation)</h2>
+<input type="file" id="imageUpload" accept="image/png, image/jpeg">
+<div id="imageResult"></div>
+<img id="imagePreview" class="preview-img"/>
+<p id="aiConfidence"></p>
+<button id="backBtn" class="btn hidden" onclick="resetUpload()">Back</button>
+</div>
+
+<div id="emergencySection" class="hidden">
+
+<div class="section">
+<h2>Emergency Location Sharing</h2>
+<button class="btn" onclick="shareLocation()">Share Location</button>
+<div id="locationResult"></div>
+</div>
+
+<div class="section">
+<h2>Sprinkler Control System</h2>
+
+<div class="zones">
+<div class="zone" onclick="selectZone(this)">Zone 1</div>
+<div class="zone" onclick="selectZone(this)">Zone 2</div>
+<div class="zone" onclick="selectZone(this)">Zone 3</div>
+<div class="zone" onclick="selectZone(this)">Zone 4</div>
+<div class="zone" onclick="selectZone(this)">Zone 5</div>
+</div>
+
+<button id="activateBtn" class="btn hidden" onclick="activateSprinkler()">Activate Sprinkler</button>
+<div id="sprinklerResult"></div>
+
+</div>
+
+</div>
+
+<div class="section">
+<h2>Historical Fire Risk Data</h2>
+<canvas id="historicalChart" width="700" height="300"></canvas>
+
+<button class="btn" onclick="generateReport()">Generate Report</button>
+<div id="reportContainer"></div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
